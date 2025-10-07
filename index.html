@@ -1,262 +1,213 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HealthPay Landing Page</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>HealthPay</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
+<script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "primary": "#1183d4",
+              primary: "#1193d4",
               "background-light": "#f6f7f8",
-              "background-dark": "#101a22",
-              "content-light": "#1f2937",
-              "content-dark": "#e5e7eb",
-              "subtle-light": "#6b7280",
-              "subtle-dark": "#9ca3af",
-              "border-light": "#e5e7eb",
-              "border-dark": "#374151",
+              "background-dark": "#101c22",
             },
             fontFamily: {
-              display: ["Manrope", "sans-serif"],
+              display: ["Manrope"],
             },
-            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px"
+            },
           },
         },
       };
     </script>
-<style>
-      .timeline-decorator::before {
-        content: "";
-        position: absolute;
-        top: 2rem;
-        left: 1.125rem;
-        bottom: 0;
-        width: 2px;
-        background-color: #e5e7eb;
-      }
-      .dark .timeline-decorator::before {
-        background-color: #374151;
-      }
-      .timeline-decorator:last-child::before {
-        display: none;
-      }
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
-<div class="flex min-h-screen flex-col">
-<header class="sticky top-0 z-10 w-full border-b border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="container mx-auto flex items-center justify-between px-4 py-4 lg:px-8">
-<a class="flex items-center gap-3" href="#">
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 px-10 py-4">
+<div class="flex items-center gap-3 text-gray-900 dark:text-white">
 <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
 <path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
 </svg>
-<h2 class="text-xl font-bold text-content-light dark:text-content-dark">HealthPay</h2>
-</a>
-<nav class="hidden items-center gap-8 md:flex">
-<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary" href="#">Home</a>
-<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary" href="#">How it works</a>
-<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary" href="#">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-primary/90">Login</button>
+<h2 class="text-xl font-bold">HealthPay</h2>
 </div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary" href="#">Como funciona</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Simule agora</a>
+</nav>
+<button class="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/90 transition-colors">
+<span class="truncate">Entrar</span>
+</button>
 </div>
 </header>
-<main class="flex-grow">
-<section class="relative">
-<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBu2QlZM5qh0zye2oQEO_x_ASnoy5oLXrrvS0TYUNWbeBiAt8PCgJKYE-CUKoj3WStngYO55q7bzeh32uPsMzyQau49hDI-IQj8DM5lYNcaJIHSYzFnkp91mlyIzbFTOv7itKOUWrc4iFgafsyaFEX1HbQ5ft9cDfdBfG6hrTTwdPeXl2k_a3TbDSHi2GUswoMouUKzw2eyTHvxGwFPUVkbGjvGRjueh9L4UjlrTKNy4w-9lusaKLspUewFnHZQbwf0xxt4cjJNG-N9");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20"></div>
-<div class="container relative mx-auto px-4 py-32 text-center text-white lg:px-8">
-<h1 class="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl lg:text-6xl">Anticipate your receivables from health insurance plans</h1>
-<p class="mx-auto mt-6 max-w-2xl text-lg text-white/90">Get paid faster and improve your cash flow with our simple and efficient anticipation service.</p>
-<button class="mt-8 rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105">Simulate Now</button>
+<main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-12">
+<div class="layout-content-container flex flex-col max-w-5xl mx-auto">
+<section class="mb-20">
+<div class="relative min-h-[480px] flex flex-col justify-end rounded-xl overflow-hidden p-8 md:p-12 bg-cover bg-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHfS9J3tDkO_VKe4sB0VDL9ksfcFFhQIM6laFbVERv7-7llKSH7quexAk78aqxxlhkxziVBPHbprVtLeL4cmOX_pKqNK-X29zHNqN22CIwUdp2-t0QjQY5cdWTHzAy93IjdbbDHmQRk4GNHSQvqDXErxxEtinI7-CsxYJahJINFQe0sXql4H-HwggWINB9aCd_JhKcInE9EB6QN_HZ-K6paFMU3sIcW8tO4UbEJzixPcy8Fp19jw-E2rYVrDSIosVNT-Ibo794yA");'>
+<div class="flex flex-col gap-4 max-w-2xl">
+<h1 class="text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Receba hoje pelos serviços que o plano só paga daqui a 60 dias</h1>
+<p class="text-gray-200 text-base md:text-lg">Antecipe seus recebíveis de planos de saúde de forma simples e rápida.</p>
+<div class="mt-4">
+<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg hover:bg-primary/90 transition-colors">
+<span>Simule Agora</span>
+</button>
+</div>
+</div>
 </div>
 </section>
-<section class="py-16 sm:py-24">
-<div class="container mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 lg:grid-cols-2 lg:gap-16 lg:px-8">
+<section class="py-16 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Os planos de saúde demoram. Você não precisa esperar.</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400">Com a HealthPay, você recebe seus pagamentos de planos de saúde em até 2 dias úteis, sem burocracia e com taxas competitivas.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 mt-12">
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-6">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px">schedule</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Receba em até 2 dias</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Pagamentos na sua conta em até 2 dias úteis, sem complicação.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-6">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px">paid</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Taxas competitivas</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Nossas taxas são transparentes e competitivas, sem surpresas.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-6">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px">verified_user</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Segurança e transparência</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">Proteção de dados e garantia de pagamentos em todas as etapas.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50 dark:bg-gray-900/50 rounded-xl">
+<div class="max-w-4xl mx-auto px-4 md:px-0">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Simule sua antecipação</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400">Veja o quanto você pode receber adiantado de forma rápida.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-start">
+<div class="space-y-6">
 <div>
-<h2 class="text-3xl font-bold tracking-tight">The Problem</h2>
-<p class="mt-4 text-lg text-subtle-light dark:text-subtle-dark">
-                Healthcare professionals often face delays in receiving payments from health insurance plans, leading to cash flow issues and operational challenges. This uncertainty can impact the quality of care and the overall financial health of your practice.
-              </p>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="valor">Valor a receber</label>
+<input class="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-primary focus:border-primary h-12" id="valor" placeholder="R$ 0,00" type="text"/>
 </div>
 <div>
-<h2 class="text-3xl font-bold tracking-tight">Our Solution</h2>
-<p class="mt-4 text-lg text-subtle-light dark:text-subtle-dark">
-                We offer a simple and efficient anticipation service that allows you to receive your payments faster, improving your cash flow and providing financial stability. Our process is transparent, secure, and designed to minimize administrative burden.
-              </p>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="data">Data de recebimento original</label>
+<input class="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-primary focus:border-primary h-12" id="data" placeholder="dd/mm/aaaa" type="text"/>
 </div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="operadora">Operadora do plano</label>
+<select class="form-select w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-primary focus:border-primary h-12" id="operadora">
+<option>Selecione</option>
+<option>Plano A</option>
+<option>Plano B</option>
+</select>
 </div>
-</section>
-<section class="bg-background-light dark:bg-background-dark py-16 sm:py-24">
-<div class="container mx-auto max-w-3xl px-4 text-center lg:px-8">
-<h2 class="text-3xl font-bold tracking-tight">Simulate Your Anticipation</h2>
-<p class="mt-4 text-lg text-subtle-light dark:text-subtle-dark">See how much you can receive instantly. It's fast, easy, and obligation-free.</p>
-<div class="mx-auto mt-8 max-w-md">
-<input class="form-input w-full rounded-lg border-border-light bg-white dark:border-border-dark dark:bg-background-dark p-4 text-center text-lg placeholder-subtle-light dark:placeholder-subtle-dark focus:border-primary focus:ring-primary" placeholder="Enter the amount to be received" type="text"/>
-<button class="mt-4 w-full rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105">Simulate</button>
+<button class="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg hover:bg-primary/90 transition-colors">
+<span>Calcular valor antecipado</span>
+</button>
 </div>
-<div class="mt-12 flex items-center justify-center">
-<button class="inline-flex items-center gap-3 rounded-full bg-green-500 px-6 py-3 font-bold text-white transition-colors hover:bg-green-600">
-<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"></path></svg>
-                Contact Us on WhatsApp
-              </button>
-</div>
-</div>
-</section>
-<section class="py-16 sm:py-24">
-<div class="container mx-auto max-w-3xl px-4 text-center lg:px-8">
-<h2 class="text-3xl font-bold tracking-tight">How It Works</h2>
-<p class="mx-auto mt-4 max-w-2xl text-lg text-subtle-light dark:text-subtle-dark">A simple, three-step process to get your funds faster.</p>
-</div>
-<div class="container mx-auto mt-12 max-w-4xl px-4 lg:px-8">
-<div class="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3">
-<div class="relative pl-12 timeline-decorator">
-<div class="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white">
-<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M208,24H72A16,16,0,0,0,56,40V216a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V40A16,16,0,0,0,208,24Zm0,192H72V40H208V216ZM112,80v96a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Zm48,0a8,8,0,0,0-8,8v80a8,8,0,0,0,16,0V88A8,8,0,0,0,160,80Z"></path></svg>
-</div>
-<h3 class="text-lg font-bold">1. Submit your receivables</h3>
-<p class="mt-2 text-subtle-light dark:text-subtle-dark">Upload the necessary documentation for your receivables through our secure portal.</p>
-</div>
-<div class="relative pl-12 timeline-decorator">
-<div class="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white">
-<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152Z"></path><path d="M128,24a104,104,0,1,0,104,104A104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"></path></svg>
-</div>
-<h3 class="text-lg font-bold">2. Receive your payment</h3>
-<p class="mt-2 text-subtle-light dark:text-subtle-dark">Our team reviews your submission, and once approved, the anticipated payment is sent directly to you.</p>
-</div>
-<div class="relative pl-12 timeline-decorator">
-<div class="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white">
-<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M239.32,95.32l-56-56A8,8,0,0,0,176,40H80a16,16,0,0,0-16,16V200a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V104a8,8,0,0,0-8-8H119.53L162.7,53.21,176,66.52V88h16V71.69l32.47,32.48-18.1,18.1a8,8,0,0,0,11.32,11.32l24-24A8,8,0,0,0,239.32,95.32ZM176,200H80V56h88v40h40v16.7l-4.29-4.3a8,8,0,0,0-11.42,11.32L192,123.31V200Zm16-109.48L173.48,72H128v48h48Z"></path></svg>
-</div>
-<h3 class="text-lg font-bold">3. Focus on your patients</h3>
-<p class="mt-2 text-subtle-light dark:text-subtle-dark">With your cash flow secured, you can focus on what matters most: providing the best care to your patients.</p>
+<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-8 text-center flex flex-col justify-center h-full">
+<p class="text-base font-medium text-gray-600 dark:text-gray-400">Valor antecipado</p>
+<p class="text-4xl font-bold text-gray-900 dark:text-white mt-2">R$ 9.500,00</p>
+<p class="text-sm text-gray-500 dark:text-gray-500 mt-4">Valor simulado. A proposta final será enviada após análise.</p>
 </div>
 </div>
 </div>
 </section>
-<section class="bg-background-light dark:bg-background-dark py-16 sm:py-24">
-<div class="container mx-auto px-4 lg:px-8">
-<div class="text-center">
-<h2 class="text-3xl font-bold tracking-tight">What Our Clients Say</h2>
-<p class="mx-auto mt-4 max-w-2xl text-lg text-subtle-light dark:text-subtle-dark">Hear from healthcare professionals who have transformed their practice with HealthPay.</p>
+<section class="py-20 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Antecipe seus recebíveis agora mesmo</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400 mb-8">Fale com um de nossos especialistas e antecipe seus recebíveis de forma rápida e segura.</p>
+<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg hover:bg-primary/90 transition-colors mx-auto">
+<span>Antecipar via WhatsApp</span>
+</button>
 </div>
-<div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-<div class="rounded-xl border border-border-light bg-white p-6 shadow-sm dark:border-border-dark dark:bg-background-dark">
-<p class="text-subtle-light dark:text-subtle-dark">"HealthPay has been a game-changer for our clinic. The ability to anticipate our receivables has significantly improved our cash flow, allowing us to invest in new equipment and better serve our patients."</p>
-<div class="mt-4 flex items-center">
-<img alt="Dr. Sarah Johnson" class="h-12 w-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2wZKv3KM4sW5b77-vj2TH_Qz3yhtuylhCIK3cEb4MT2gFGkz64OyuxZJDh7QVbTc-aMMtZXMG928d-Z3OGX93L8cwn4qamcOsFFnZmtpyhOSDaO7RUmej8pUMumescoTJW7RT2O_LEqCXdXeS8J8p_LRSN0TsDpFlotTPRWEnEnUPf7zUizXoIMVMfHdq2cBmZKf5gJtQOQgl2TVs7rgMh6YGgBMwB0psHDWoj9VrNDP0Rxw1lXQotbxjaRNkt0hGQtNZJq2_vOo8"/>
-<div class="ml-4">
-<p class="font-bold">Dr. Sarah Johnson</p>
-<p class="text-sm text-subtle-light dark:text-subtle-dark">Clinic Director</p>
+</section>
+<section class="py-16">
+<div class="max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12">Como Funciona</h2>
+<div class="relative">
+<div class="absolute left-5 top-5 bottom-5 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+<div class="space-y-12">
+<div class="flex items-start gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white z-10">
+<span class="material-symbols-outlined">search</span>
 </div>
-</div>
-</div>
-<div class="rounded-xl border border-border-light bg-white p-6 shadow-sm dark:border-border-dark dark:bg-background-dark">
-<p class="text-subtle-light dark:text-subtle-dark">"The process was incredibly simple and fast. I was skeptical at first, but the team at HealthPay was transparent and supportive throughout. I highly recommend their service."</p>
-<div class="mt-4 flex items-center">
-<img alt="Dr. Mark Chen" class="h-12 w-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdwzXhz4OcngbY-fYZOIVHB8sj6UgRsxZCdLj-wTMHtrQ-4iFgbdaDT2ueS26JaejEgh2udAuNV3wn4VZX5f4hZ53hxIFAqPsx3RiYnmVS8MjCF2Qh0V6P6vzpcd0QqTvjIwWtQYfkVEFwV2heDCvoTS7noyrx861za2ep5puzH4fw-WaUU3dQQ6VVNpSrlzZ-vswE0q2P6KVjClpicc9wIjLdqOwxCzfKKv8isMdkL5e_-_H7Y-uYVAbiG0bJhmzjVUZoG_iLonsB"/>
-<div class="ml-4">
-<p class="font-bold">Dr. Mark Chen</p>
-<p class="text-sm text-subtle-light dark:text-subtle-dark">Private Practice Owner</p>
+<div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Simule sua antecipação</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">Simule o valor que você pode receber antecipadamente.</p>
 </div>
 </div>
+<div class="flex items-start gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white z-10">
+<span class="material-symbols-outlined">description</span>
 </div>
-<div class="rounded-xl border border-border-light bg-white p-6 shadow-sm dark:border-border-dark dark:bg-background-dark">
-<p class="text-subtle-light dark:text-subtle-dark">"Finally, a solution that understands the financial challenges of healthcare professionals. With HealthPay, we no longer worry about payment delays from insurance companies."</p>
-<div class="mt-4 flex items-center">
-<img alt="Dr. Emily Rodriguez" class="h-12 w-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeW6qz1VMoeA3qYOpWcMKeboiQXZpC_9c-R0D2f3ZVNmjKlR8lR-mZTCd1h0K2yBllSBBnF2XSUZ6TXVIrz5baDiOc1KlKdg-iWMlb1dkFdhVkGOcFom574sfxb8qZPPNVo-ghimb25uv7OqeilDeQVorMKlHUQVqkMyUlQB3zuHLvHSncxN1ThqYmfVi0mnXdR1TZVSpGKh6NZT_PtSOirXyut05KSNPIJOVvoOSF26mXUVWdCeqGqWR1b6UfkSHJ_zOnT2_1ZEnb"/>
-<div class="ml-4">
-<p class="font-bold">Dr. Emily Rodriguez</p>
-<p class="text-sm text-subtle-light dark:text-subtle-dark">Dentist</p>
+<div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Envie seus dados</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">Envie seus dados e documentos para análise.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white z-10">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Receba em até 2 dias</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-1">Receba o valor antecipado em sua conta em até 2 dias úteis.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="py-16 sm:py-24">
-<div class="container mx-auto max-w-4xl px-4 lg:px-8">
-<div class="text-center">
-<h2 class="text-3xl font-bold tracking-tight">Frequently Asked Questions</h2>
-<p class="mx-auto mt-4 max-w-2xl text-lg text-subtle-light dark:text-subtle-dark">Find answers to common questions about our services.</p>
 </div>
-<div class="mt-12 space-y-6">
-<details class="group rounded-lg border border-border-light bg-white p-6 shadow-sm dark:border-border-dark dark:bg-background-dark">
-<summary class="flex cursor-pointer items-center justify-between font-medium">
-<span>What types of receivables can I anticipate?</span>
-<svg class="h-6 w-6 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</summary>
-<div class="mt-4 text-subtle-light dark:text-subtle-dark">You can anticipate receivables from most private health insurance plans. We are continuously expanding our network of partners. Please contact us for specific details about your insurance plans.</div>
-</details>
-<details class="group rounded-lg border border-border-light bg-white p-6 shadow-sm dark:border-border-dark dark:bg-background-dark">
-<summary class="flex cursor-pointer items-center justify-between font-medium">
-<span>What are the fees for the anticipation service?</span>
-<svg class="h-6 w-6 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</summary>
-<div class="mt-4 text-subtle-light dark:text-subtle-dark">Our fees are transparent and calculated based on the amount and term of the anticipation. You can use our simulation tool to get a detailed estimate. There are no hidden costs.</div>
-</details>
-<details class="group rounded-lg border border-border-light bg-white p-6 shadow-sm dark:border-border-dark dark:bg-background-dark">
-<summary class="flex cursor-pointer items-center justify-between font-medium">
-<span>How long does the process take?</span>
-<svg class="h-6 w-6 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</summary>
-<div class="mt-4 text-subtle-light dark:text-subtle-dark">Once you submit your documentation, our team typically reviews it within 24-48 hours. Upon approval, the funds are transferred to your account immediately.</div>
-</details>
-<details class="group rounded-lg border border-border-light bg-white p-6 shadow-sm dark:border-border-dark dark:bg-background-dark">
-<summary class="flex cursor-pointer items-center justify-between font-medium">
-<span>Is my data secure?</span>
-<svg class="h-6 w-6 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</summary>
-<div class="mt-4 text-subtle-light dark:text-subtle-dark">Yes, we use state-of-the-art encryption and security protocols to protect your sensitive information. Your data privacy and security are our top priorities.</div>
-</details>
-</div>
-</div>
-</section>
-<section class="bg-background-light dark:bg-background-dark py-16 sm:py-24">
-<div class="container mx-auto px-4 text-center lg:px-8">
-<h2 class="text-4xl font-extrabold tracking-tight">Ready to get started?</h2>
-<p class="mx-auto mt-4 max-w-2xl text-lg text-subtle-light dark:text-subtle-dark">Improve your practice's financial health today. Simulate your anticipation now and see the difference.</p>
-<button class="mt-8 rounded-lg bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105">Simulate Now</button>
-</div>
-</section>
 </main>
-<footer class="border-t border-border-light dark:border-border-dark">
-<div class="container mx-auto max-w-7xl px-4 py-12 lg:px-8">
-<div class="flex flex-col items-center gap-8 text-center md:flex-row md:justify-between">
-<div class="flex items-center gap-3">
-<svg class="h-7 w-7 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path><path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path></svg>
-<p class="text-sm text-subtle-light dark:text-subtle-dark">© 2023 HealthPay. All rights reserved.</p>
+<footer class="border-t border-gray-200 dark:border-gray-800 py-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400">
+<div class="flex justify-center gap-6 mb-6">
+<a class="hover:text-primary" href="#">Termos de uso</a>
+<a class="hover:text-primary" href="#">Política de Privacidade</a>
+<a class="hover:text-primary" href="#">Contato</a>
 </div>
-<div class="flex items-center justify-center gap-6">
-<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary" href="#">Privacy Policy</a>
-<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary" href="#">Terms of Service</a>
-<a class="text-sm font-medium text-subtle-light dark:text-subtle-dark hover:text-primary" href="#">Contact Us</a>
+<div class="flex justify-center gap-6 mb-6">
+<a class="hover:text-primary" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path>
+</svg>
+</a>
+<a class="hover:text-primary" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+</a>
+<a class="hover:text-primary" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085a4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+</svg>
+</a>
 </div>
-<div class="flex items-center justify-center gap-4">
-<a class="text-subtle-light dark:text-subtle-dark hover:text-primary" href="#"><svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg></a>
-<a class="text-subtle-light dark:text-subtle-dark hover:text-primary" href="#"><svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path></svg></a>
-<a class="text-subtle-light dark:text-subtle-dark hover:text-primary" href="#"><svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path></svg></a>
-</div>
-</div>
+<p>© 2024 HealthPay. Todos os direitos reservados.</p>
 </div>
 </footer>
+</div>
 </div>
 
 </body></html>
