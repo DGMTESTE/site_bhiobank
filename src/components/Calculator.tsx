@@ -20,7 +20,7 @@ import { toast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 // Webhook URL - this is a public endpoint so it's safe to store in code
-const SIMULATION_WEBHOOK_URL = "https://workflows.autobotics.com.br/webhook-test/53139f23-2c4b-4ec3-bb6e-5d0ce6b10f25";
+const SIMULATION_WEBHOOK_URL = import.meta.env.VITE_SIMULATION_WEBHOOK_URL;
 
 export const Calculator = () => {
   const [amount, setAmount] = useState("");
