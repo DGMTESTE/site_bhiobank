@@ -1,213 +1,27 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<title>HealthPay</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#1193d4",
-              "background-light": "#f6f7f8",
-              "background-dark": "#101c22",
-            },
-            fontFamily: {
-              display: ["Manrope"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px"
-            },
-          },
-        },
-      };
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 px-10 py-4">
-<div class="flex items-center gap-3 text-gray-900 dark:text-white">
-<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
-<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-<h2 class="text-xl font-bold">HealthPay</h2>
-</div>
-<div class="flex flex-1 justify-end gap-6 items-center">
-<nav class="flex items-center gap-6">
-<a class="text-sm font-medium hover:text-primary" href="#">Como funciona</a>
-<a class="text-sm font-medium hover:text-primary" href="#">Simule agora</a>
-</nav>
-<button class="flex min-w-[84px] items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/90 transition-colors">
-<span class="truncate">Entrar</span>
-</button>
-</div>
-</header>
-<main class="flex-1 px-4 sm:px-10 md:px-20 lg:px-40 py-12">
-<div class="layout-content-container flex flex-col max-w-5xl mx-auto">
-<section class="mb-20">
-<div class="relative min-h-[480px] flex flex-col justify-end rounded-xl overflow-hidden p-8 md:p-12 bg-cover bg-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHfS9J3tDkO_VKe4sB0VDL9ksfcFFhQIM6laFbVERv7-7llKSH7quexAk78aqxxlhkxziVBPHbprVtLeL4cmOX_pKqNK-X29zHNqN22CIwUdp2-t0QjQY5cdWTHzAy93IjdbbDHmQRk4GNHSQvqDXErxxEtinI7-CsxYJahJINFQe0sXql4H-HwggWINB9aCd_JhKcInE9EB6QN_HZ-K6paFMU3sIcW8tO4UbEJzixPcy8Fp19jw-E2rYVrDSIosVNT-Ibo794yA");'>
-<div class="flex flex-col gap-4 max-w-2xl">
-<h1 class="text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Receba hoje pelos serviços que o plano só paga daqui a 60 dias</h1>
-<p class="text-gray-200 text-base md:text-lg">Antecipe seus recebíveis de planos de saúde de forma simples e rápida.</p>
-<div class="mt-4">
-<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg hover:bg-primary/90 transition-colors">
-<span>Simule Agora</span>
-</button>
-</div>
-</div>
-</div>
-</section>
-<section class="py-16 text-center">
-<div class="max-w-3xl mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Os planos de saúde demoram. Você não precisa esperar.</h2>
-<p class="text-lg text-gray-600 dark:text-gray-400">Com a HealthPay, você recebe seus pagamentos de planos de saúde em até 2 dias úteis, sem burocracia e com taxas competitivas.</p>
-</div>
-<div class="grid md:grid-cols-3 gap-8 mt-12">
-<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-6">
-<span class="material-symbols-outlined text-primary" style="font-size: 32px">schedule</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-lg font-bold text-gray-900 dark:text-white">Receba em até 2 dias</h3>
-<p class="text-sm text-gray-600 dark:text-gray-400">Pagamentos na sua conta em até 2 dias úteis, sem complicação.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-6">
-<span class="material-symbols-outlined text-primary" style="font-size: 32px">paid</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-lg font-bold text-gray-900 dark:text-white">Taxas competitivas</h3>
-<p class="text-sm text-gray-600 dark:text-gray-400">Nossas taxas são transparentes e competitivas, sem surpresas.</p>
-</div>
-</div>
-<div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-6">
-<span class="material-symbols-outlined text-primary" style="font-size: 32px">verified_user</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-lg font-bold text-gray-900 dark:text-white">Segurança e transparência</h3>
-<p class="text-sm text-gray-600 dark:text-gray-400">Proteção de dados e garantia de pagamentos em todas as etapas.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-16 bg-gray-50 dark:bg-gray-900/50 rounded-xl">
-<div class="max-w-4xl mx-auto px-4 md:px-0">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Simule sua antecipação</h2>
-<p class="text-lg text-gray-600 dark:text-gray-400">Veja o quanto você pode receber adiantado de forma rápida.</p>
-</div>
-<div class="grid md:grid-cols-2 gap-8 items-start">
-<div class="space-y-6">
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="valor">Valor a receber</label>
-<input class="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-primary focus:border-primary h-12" id="valor" placeholder="R$ 0,00" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="data">Data de recebimento original</label>
-<input class="form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-primary focus:border-primary h-12" id="data" placeholder="dd/mm/aaaa" type="text"/>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="operadora">Operadora do plano</label>
-<select class="form-select w-full rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-primary focus:border-primary h-12" id="operadora">
-<option>Selecione</option>
-<option>Plano A</option>
-<option>Plano B</option>
-</select>
-</div>
-<button class="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg hover:bg-primary/90 transition-colors">
-<span>Calcular valor antecipado</span>
-</button>
-</div>
-<div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-8 text-center flex flex-col justify-center h-full">
-<p class="text-base font-medium text-gray-600 dark:text-gray-400">Valor antecipado</p>
-<p class="text-4xl font-bold text-gray-900 dark:text-white mt-2">R$ 9.500,00</p>
-<p class="text-sm text-gray-500 dark:text-gray-500 mt-4">Valor simulado. A proposta final será enviada após análise.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-20 text-center">
-<div class="max-w-3xl mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Antecipe seus recebíveis agora mesmo</h2>
-<p class="text-lg text-gray-600 dark:text-gray-400 mb-8">Fale com um de nossos especialistas e antecipe seus recebíveis de forma rápida e segura.</p>
-<button class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-lg hover:bg-primary/90 transition-colors mx-auto">
-<span>Antecipar via WhatsApp</span>
-</button>
-</div>
-</section>
-<section class="py-16">
-<div class="max-w-2xl mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12">Como Funciona</h2>
-<div class="relative">
-<div class="absolute left-5 top-5 bottom-5 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
-<div class="space-y-12">
-<div class="flex items-start gap-6">
-<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white z-10">
-<span class="material-symbols-outlined">search</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white">Simule sua antecipação</h3>
-<p class="text-gray-600 dark:text-gray-400 mt-1">Simule o valor que você pode receber antecipadamente.</p>
-</div>
-</div>
-<div class="flex items-start gap-6">
-<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white z-10">
-<span class="material-symbols-outlined">description</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white">Envie seus dados</h3>
-<p class="text-gray-600 dark:text-gray-400 mt-1">Envie seus dados e documentos para análise.</p>
-</div>
-</div>
-<div class="flex items-start gap-6">
-<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white z-10">
-<span class="material-symbols-outlined">payments</span>
-</div>
-<div>
-<h3 class="text-lg font-bold text-gray-900 dark:text-white">Receba em até 2 dias</h3>
-<p class="text-gray-600 dark:text-gray-400 mt-1">Receba o valor antecipado em sua conta em até 2 dias úteis.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<footer class="border-t border-gray-200 dark:border-gray-800 py-8">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400">
-<div class="flex justify-center gap-6 mb-6">
-<a class="hover:text-primary" href="#">Termos de uso</a>
-<a class="hover:text-primary" href="#">Política de Privacidade</a>
-<a class="hover:text-primary" href="#">Contato</a>
-</div>
-<div class="flex justify-center gap-6 mb-6">
-<a class="hover:text-primary" href="#">
-<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path>
-</svg>
-</a>
-<a class="hover:text-primary" href="#">
-<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-</svg>
-</a>
-<a class="hover:text-primary" href="#">
-<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085a4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-</svg>
-</a>
-</div>
-<p>© 2024 HealthPay. Todos os direitos reservados.</p>
-</div>
-</footer>
-</div>
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+<meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhio Bank - Saúde Financeira ao Seu Alcance</title>
+    <meta name="description" content="Antecipe seus recebíveis de planos de saúde de forma simples e rápida. Receba em até 2 dias úteis com taxas competitivas." />
+    <meta name="author" content="Bhio Bank" />
 
-</body></html>
+    <meta property="og:title" content="Bhio Bank - Saúde Financeira ao Seu Alcance" />
+    <meta property="og:description" content="Antecipe seus recebíveis de planos de saúde de forma simples e rápida." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
