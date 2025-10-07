@@ -140,6 +140,7 @@ export const Calculator = () => {
                   placeholder="R$ 0,00"
                   value={amount}
                   onChange={handleAmountChange}
+                  className="rounded-xl"
                 />
               </div>
               
@@ -166,7 +167,7 @@ export const Calculator = () => {
               <div className="space-y-2">
                 <Label htmlFor="operator">Operadora do plano</Label>
                 <Select value={operator} onValueChange={setOperator}>
-                  <SelectTrigger id="operator">
+                  <SelectTrigger id="operator" className="rounded-xl">
                     <SelectValue placeholder="Selecione" />
                   </SelectTrigger>
                   <SelectContent>
@@ -180,7 +181,7 @@ export const Calculator = () => {
               </div>
               
               <Button 
-                className="w-full bg-primary hover:bg-primary/90"
+                className="w-full bg-primary hover:bg-primary/90 rounded-xl"
                 size="lg"
                 onClick={calculateAdvance}
               >

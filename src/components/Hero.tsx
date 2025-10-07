@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { DollarSign } from "lucide-react";
+import medicoPrancheta from "@/assets/jovem-medico-alegre-com-um-comprimido-no-corredor.jpg";
 
 export const Hero = () => {
   return (
@@ -20,7 +21,7 @@ export const Hero = () => {
             </p>
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-white font-semibold px-8"
+              className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 rounded-xl mt-3"
             >
               Simule Agora
             </Button>
@@ -31,13 +32,13 @@ export const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-success/20 to-primary/20 rounded-3xl blur-2xl" />
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
                 <div className="flex items-center justify-center mb-6">
-                  <div className="bg-gradient-to-br from-[#f59e0b] to-[#d97706] rounded-2xl p-6">
-                    <DollarSign className="h-16 w-16 text-white" />
+                  <div className="rounded-2xl p-6">
+                    <img 
+                      src={medicoPrancheta} 
+                      alt="médico sorrindo" 
+                      className="rounded-2xl"
+                      />
                   </div>
-                </div>
-                <div className="space-y-4 text-center text-white">
-                  <p className="text-lg font-medium">Médico segurando símbolo de dinheiro</p>
-                  <p className="text-sm text-white/80">Receba antecipado e tenha mais controle financeiro</p>
                 </div>
               </div>
             </div>
